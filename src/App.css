@@ -34,9 +34,89 @@
 }
 
 .card {
+  max-width: 920px;
+  background-color: #213547;
+  border-radius: 8px;
   padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .read-the-docs {
   color: #888;
 }
+
+.inputComponent {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  gap: 4px;
+  align-items: center;
+}
+
+.inputComponent label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card h3{
+  grid-column: 1 / -1;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+
+input {
+  border-radius: 2px;
+  border: 4px #0a2f4e;
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+  
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.careerCard {
+  grid-column: 1 / -1;
+}
+
+.educationCard {
+  grid-column: 1 / -1;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+button {
+  background-color: #646cff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+
+
+
+
