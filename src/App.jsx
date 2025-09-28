@@ -168,14 +168,18 @@ function App() {
 
   return (
     <div className='wrapper'>
-      <h4>
-        Resume builder on React <img src={reactLogo} alt='reactLogo' className='react Logo'/>
+      <div className='cards right-section'>
+        <h4>
+        Resume builder on React <img src={reactLogo} alt='reactLogo' className='react logo'/>
       </h4>
       <GeneralInfo info={info} setInfo={setInfo} />
 
       <EducationList educations={educations} setEducations={setEducations} />
 
       <CareerList careers={careers} setCareers={setCareers} />
+      </div>
+      <div className='pdf left-section'>dsfdsfdsf</div>
+      
     </div>
   )
 }

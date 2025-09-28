@@ -1,13 +1,20 @@
 #root {
-  max-width: 1280px;
+  
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+  display: flex;
+  gap: 2rem;
 
+}
+.wrapper {
+  min-width: 980px;
+  display: flex;
+  gap: 2rem;
+}
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 3em;
+  
   will-change: filter;
   transition: filter 300ms;
 }
@@ -16,6 +23,10 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.left-section, .right-section {
+  flex: 1; /* Each takes up equal space */
 }
 
 @keyframes logo-spin {
@@ -83,7 +94,7 @@ h4 {
 
 .wrapper {
   display: flex;
-  flex-direction: column;
+  
   gap: 12px;
 }
 
@@ -116,6 +127,10 @@ button:hover {
   background-color: #535bf2;
 }
 
+
+.pdf {
+  background-color: white;
+}
 
 
 
