@@ -95,7 +95,17 @@ function Career({ career, setCareer, onRemove, index }) {
       </div>
       <InputComponent title="Company Name"    info={career} setInfo={setCareer} inputKey="companyName"   type="text" />
       <InputComponent title="Job Title"       info={career} setInfo={setCareer} inputKey="jobTitle"     type="text" />
-      <InputComponent title="Job Description" info={career} setInfo={setCareer} inputKey="jobDescription" type="text" />
+      
+      <div className='jobDescriptionComponent inputComponent'>
+    <label>
+        Job Description
+    </label>
+        <textarea value={career["jobDescription"]} onChange={e => {
+          console.log(career)
+          setCareer({...career, ["jobDescription"]: e.target.value})}}/>
+    </div>
+
+
       <InputComponent type="date" title="Start Date" info={career} setInfo={setCareer} inputKey="startDate" />
       <InputComponent type="date" title="End Date"   info={career} setInfo={setCareer} inputKey="endDate" />
     </div>
@@ -153,23 +163,27 @@ function EducationProfBlock({name, underName, startDate, endDate}) {
     <div className='name'>{name}</div>
     <div className='underName'>
       <div>{underName}</div>
-      <div>{startDate}-{endDate}</div>
+      <div>{startDate} - {endDate}</div>
     </div>
     </div>
   )
 }
 
 function ProfBlock({name, jobTitle, jobDescription, startDate, endDate}) {
+  const jobDescriptionSplit = jobDescription.split("\n")
   return (
     <div className='education-prof-block'>
     <div className='name'>{name}</div>
     <div className='underName'>
       <div>{jobTitle}</div>
-      <div>{startDate}-{endDate}</div>
+      <div>{startDate} - {endDate}</div>
     </div>
-    <div>
-      {jobDescription}
-    </div>
+    <ul className='jobOutput'>
+      {jobDescriptionSplit.map((jobDesc, i) => (
+        <li key={i}>{jobDesc}</li>
+        
+        ))}
+    </ul>
     </div>
   )
 

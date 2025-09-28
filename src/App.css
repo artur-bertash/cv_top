@@ -72,7 +72,7 @@
 .inputComponent {
   display: flex;
   flex-direction: column;
-  margin: 12px;
+  margin-right: 12px;
   gap: 4px;
   align-items: center;
 }
@@ -187,9 +187,42 @@ button:hover {
 .underName {
   display: flex;
   justify-content: space-between;
-
   width: 100%;
 }
 
 
+.jobDescriptionComponent {
 
+ grid-column: 1/ -1;
+ 
+ width: 100%;
+ height: 150px;
+ resize: none;
+
+}
+
+
+textarea {
+  width: 100%;
+  height: 128px;
+}
+
+.pdf {
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.generalInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.innerPDF > div:first-child,
+.innerPDF > div:nth-child(2) {
+  text-align: center;
+}
