@@ -145,6 +145,37 @@ function CareerList({careers, setCareers}) {
 
 
 }
+
+
+function EducationProfBlock({name, underName, startDate, endDate}) {
+  return (
+    <div className='education-prof-block'>
+    <div className='name'>{name}</div>
+    <div className='underName'>
+      <div>{underName}</div>
+      <div>{startDate}-{endDate}</div>
+    </div>
+    </div>
+  )
+}
+
+function ProfBlock({name, jobTitle, jobDescription, startDate, endDate}) {
+  return (
+    <div className='education-prof-block'>
+    <div className='name'>{name}</div>
+    <div className='underName'>
+      <div>{jobTitle}</div>
+      <div>{startDate}-{endDate}</div>
+    </div>
+    <div>
+      {jobDescription}
+    </div>
+    </div>
+  )
+
+}
+
+
 function App() {
   const [info, setInfo] = useState({
     firstName: "",
@@ -168,18 +199,54 @@ function App() {
 
   return (
     <div className='wrapper'>
-      <div className='cards right-section'>
-        <h4>
-        Resume builder on React <img src={reactLogo} alt='reactLogo' className='react logo'/>
+      <h4 className='title-logo'>
+        CV builder on React <img src={reactLogo} alt='reactLogo' className='react logo'/>
       </h4>
+      <div className='cards left-section'>
+      
       <GeneralInfo info={info} setInfo={setInfo} />
 
       <EducationList educations={educations} setEducations={setEducations} />
 
-      <CareerList careers={careers} setCareers={setCareers} />
-      </div>
-      <div className='pdf left-section'>dsfdsfdsf</div>
       
+      </div>
+      <div className='pdf middle-section'>
+      <div className='innerPDF'>
+        <div>{info.firstName} {info.lastName}</div>
+        <div>{info.email} | {info.phone}</div>
+        <div className='educationSec'>
+          <div className='introWorkExperience section-underline'>EDUCATION</div>
+          {educations.map(education => (
+              <EducationProfBlock
+                key={`${education.schoolName}-${education.degree}-${education.startDate}`}
+                name={education.schoolName}
+                underName={education.degree}
+                startDate={education.startDate}
+                endDate={education.endDate}
+              />
+            ))}
+        </div>
+        <div className='workSec'>
+            <div className='introWorkExperience section-underline'>WORK EXPERIENCE</div>
+            {careers.map(career => (
+              <ProfBlock
+              key={`${career.companyName}-${career.jobTitle}-${career.startDate}`}
+              name={career.companyName}
+              jobTitle={career.jobTitle}
+              jobDescription={career.jobDescription}
+              startDate={career.startDate}
+              endDate={career.endDate}
+              />
+            ))}
+
+        </div>
+        
+      </div>
+      </div>
+      <div className='cards right-section'>
+        <CareerList careers={careers} setCareers={setCareers} />
+          
+      </div>
     </div>
   )
 }

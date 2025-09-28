@@ -25,9 +25,19 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.left-section, .right-section {
+.left-section,
+.right-section {
   flex: 1; /* Each takes up equal space */
 }
+
+.middle-section {
+  flex: 1.5;
+  
+  width: 360px;
+  height: 850px;
+}
+
+
 
 @keyframes logo-spin {
   from {
@@ -129,9 +139,57 @@ button:hover {
 
 
 .pdf {
-  background-color: white;
+  background-color: whitesmoke;
+  color: black;
+  box-sizing: border-box;
+  padding: 24px;
 }
 
+
+
+.title-logo {
+  position: fixed;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%) rotate(90deg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.introWorkExperience {
+  display: flex;
+  justify-content: baseline;
+  margin-top: 24px;
+}
+
+.section-underline {
+  width: 100%;
+  
+  border-bottom: 1px solid #000;
+  padding-bottom: 6px; 
+}
+
+
+.education-prof-block {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.underName {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
 
 
 
